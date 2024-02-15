@@ -1,0 +1,26 @@
+<nav class="navigation">
+    <div class="inner">
+        
+        <div class="navLeft">
+            <a href="{{ render(controller('App\\Controller\\PageController::getLink',{ 'id': 5 })) }}" class="linknav" data-nav="">About-us</a>
+            <a href="#" class="linknav" data-nav="">Products</a>
+        </div>
+
+        <div class="navCentre">
+            <div class="logo">
+                {% if action is defined %}
+                    <img src="{{ asset('img/logo-menu.png') }}" class="linknav" data-nav=".content" alt="">
+                {% else %}
+                    <a href="{{ path('app_index') }}"><img src="{{ asset('img/logo-menu.png') }}" alt=""></a>
+                {% endif %}
+            </div>
+        </div> 
+      
+        <div class="navRight">
+            <a href="#" class="linknav" data-nav=".section5">News</a>
+            <a href="#" class="linknav" data-nav=".section15">Contact-us</a>
+        </div>
+  
+        <div class="clear"></div>
+    </div>
+</nav>

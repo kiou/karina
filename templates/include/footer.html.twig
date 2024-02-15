@@ -1,0 +1,33 @@
+<footer class="footer">
+    <div class="inner">
+        <div class="footerHeader">
+            <img src="{{ asset('img/logofooter.png') }}">
+            <p>Lorem ipsum dolor sit amet consectetur. Libero viverra lorem posuere facilisis venenatis. Ut bibendum vulputate tortor magna est faucibus non. Mus faucibus dignissim sagittis non.</p>
+        </div>
+
+        <div class="footerCols">
+            <div class="footerCol">
+                <ul>
+                    <li><a href="{{ render(controller('App\\Controller\\PageController::getLink',{ 'id': 5 })) }}">About-us</a></li>
+                    <li><a href="">Products</a></li>
+                    <li><a href="">News</a></li>
+                    <li><a href="">Contact-us</a></li>
+                    <li><a href="{{ render(controller('App\\Controller\\PageController::getLink',{ 'id': 4 })) }}">Copyright</a></li>
+                </ul>
+            </div>
+            <div class="footerCol col2">
+                <h3>social network</h3>
+                <ul>
+                    <li><a href=""><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+                    <li><a href=""><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                    <li><a href=""><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+        
+
+    <div class="footerTop"></div>
+    <div class="patern7"></div>
+    <div class="patern8"></div>
+</footer>

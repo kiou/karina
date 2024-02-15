@@ -1,0 +1,39 @@
+{% extends 'app/layout.html.twig' %}
+
+{% block content %}
+
+    <div class="section page liste">
+        <div class="inner">
+
+            <div class="titre centre">
+                <h2><span>Mes</span> actualités</h2>
+                <p>Découvrez l'informatique avec vous en image</p>
+            </div>
+
+            <div class="actualites">
+
+                {% for actualite in actualites %}
+                    <div class="actualite">
+                        <div class="actualiteImage">
+                            <img src="{{ asset('img/miniature/' ~ actualite.image) }}">
+
+                            <div class="actualiteDate">
+                                <p class="flag">{{actualite.created|localizeddate('none', 'none', null, null, 'MMMM Y')}}</p>
+                            </div>
+                        </div>
+                        <div class="actualiteContenu">
+                            <a href="{{ path('app_actualites_view',{'slug': actualite.slug, 'id': actualite.id})}}"><h3>{{ actualite.titre }}</h3></a>
+                            <p>{{ actualite.resume}}</p>
+                        </div>
+
+                        <a href="{{ path('app_actualites_view',{'slug': actualite.slug, 'id': actualite.id})}}" class="btn link">lire la suite</a>
+                    </div>
+                {% endfor %}
+                
+            </div>
+
+            <div class="clear"></div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'app/layout.html.twig' %}
+
+{% block title %} <title>{{ page.titre }}</title>{% endblock %}
+
+{% block content %}
+
+    {# En tête Page #}
+    <section class="headerPage">
+        <div class="inner">
+            <div class="headerPageContent"  style="background-image:url({{ asset('img/upload/' ~ page.image) }})">
+                <div class="headerPageTitle">
+                    <div>
+                        <h1>{{ page.titre }}</h1>
+                        <div class="headerPageP">
+                            <p>{{ page.accroche|raw }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="patern1">
+        <div class="inner">
+        </div>
+    </section>
+
+    {# Contenu d'une page #}
+    <section class="pageContent">
+        <div class="inner">
+            {{ page.contenu|raw }}
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,151 @@
+{% extends 'app/layout.html.twig' %}
+
+{% block content %}
+
+    <section class="headerPage headerAccueil">
+        <div class="inner">
+            <div class="headerPageContent"  style="background-image:url({{ asset('img/upload/' ~ header.image) }})">
+                <div class="headerPageTitle">
+                    <div>
+                        <h1>{{ header.title }}</h1>
+                        <div class="headerPageP">
+                            <p>{{ header.accroche|raw }}</p>
+                        </div>
+                        {% if header.lien is not null %}
+                            <div class="headerPageLien">
+                                <a href="" class="btn">En savoir +</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     
+    <section class="patern1">
+        <div class="inner">
+        </div>
+    </section>
+
+    <section class="quality">
+        <div class="inner">
+            <div class="qualityLeft">
+                <img src="{{ asset('img/quality-home.png') }}">
+                <div class="patern2"></div>
+            </div>
+
+            <div class="qualityRight">
+                <h2>quality</h2>
+                <div class="qualityRightContent">    
+                    <p>Lorem ipsum dolor sit amet consectetur. Libero viverra lorem posuere facilisis venenatis. Ut bibendum vulputate tortor magna est faucibus non. Mus faucibus dignissim sagittis non. Et vestibulum volutpat odio mauris porta. Sit ornare quis id volutpat hac phasellus lacinia volutpat. Dictum risus tellus imperdiet id posuere. </p>        
+                </div>
+                <a href="{{ render(controller('App\\Controller\\PageController::getLink',{ 'id': 1 })) }}" class="btn">En savoir +</a>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+    </section>
+
+    <section class="menusHome">
+        <div class="inner">
+            <div class="menuHome">            
+                <img src="{{ asset('img/menuhome1.png') }}">
+                <a href="{{ render(controller('App\\Controller\\PageController::getLink',{ 'id': 5 })) }}">about us</a>
+            </div>
+
+            <div class="menuHome">            
+                <img src="{{ asset('img/menuhome2.png') }}">
+                <a href="">products</a>
+            </div>
+
+            <div class="menuHome">            
+                <img src="{{ asset('img/menuhome3.png') }}">
+                <a href="">news</a>
+            </div>
+
+            <div class="menuHome">            
+                <img src="{{ asset('img/menuhome4.png') }}">
+                <a href="">contact us</a>
+            </div>
+
+            <div class="patern3"></div>
+        </div>
+    </section>
+
+    <section class="philosophy">
+        <div class="inner">
+            <div class="philosophyLeft">
+                <h2>philosophy</h2>
+                <div class="philosophyLeftContent">   
+                    <p>Lorem ipsum dolor sit amet consectetur. Libero viverra lorem posuere facilisis venenatis. Ut bibendum vulputate tortor magna est faucibus non. Mus faucibus dignissim sagittis non. Et vestibulum volutpat odio mauris porta. Sit ornare quis id volutpat hac phasellus lacinia volutpat. Dictum risus tellus imperdiet id posuere. </p>
+                    <p>Lorem ipsum dolor sit amet consectetur. Libero viverra lorem posuere facilisis venenatis. Ut bibendum vulputate tortor magna est faucibus non. Mus faucibus dignissim sagittis non.</p>
+                </div>
+                <a href="{{ render(controller('App\\Controller\\PageController::getLink',{ 'id': 2 })) }}" class="btn">En savoir +</a>
+            </div>
+
+            <div class="philosophyRight">
+                <img src="{{ asset('img/philosophy1.png') }}" class="philosophyRightImg1">
+                <img src="{{ asset('img/philosophy2.png') }}" class="philosophyRightImg2">
+                <div class="patern4"></div>
+
+                <div class="clear"></div>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+    </section>
+
+    <section class="statistiques">
+        <div class="inner">
+            {% for statistique in statistiques %}
+                <div class="statistique">
+                    <h2>{{ statistique.chiffre }}</h2>
+                    <p>{{ statistique.title }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="social">
+        <div class="inner">
+            <h2>social responsability</h2>
+            <a href="{{ render(controller('App\\Controller\\PageController::getLink',{ 'id': 3 })) }}" class="btn blanc">En savoir +</a>
+            
+            <div class="patern5"></div>
+        </div>
+    </section>
+
+    <section class="patern1">
+        <div class="inner">
+        </div>
+    </section>
+
+    <section class="homeVideo">
+        <div class="inner">
+            <div class="homeVideoIframe">
+                <iframe width="1210" height="550" src="https://www.youtube.com/embed/KLuTLF3x9sA?si=SWISDEIdCLNTR_E8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+
+            <div class="homeVideoConntent">
+                <p>Lorem ipsum dolor sit amet consectetur. Libero viverra lorem posuere facilisis venenatis. Ut bibendum vulputate tortor magna est faucibus non. Mus faucibus dignissim sagittis non. Et vestibulum volutpat odio mauris porta. Sit ornare quis id volutpat hac phasellus lacinia volutpat.</p>
+            </div>
+        </div>
+
+        <div class="patern6"></div>
+    </section>
+
+    <div class="galeries">
+        <div class="inner">
+            <h2>gallery photo</h2>
+
+            <div class="owl-one owl-carousel owl-theme">
+                {% for galerie in galeries %}
+                    <div>
+                        <img src="{{ asset('img/miniature/' ~ galerie.image) }}">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
