@@ -10,17 +10,23 @@
                 <ul>
                     <li><a href="{{ render(controller('App\\Controller\\PageController::getLink',{ 'id': 5 })) }}">About-us</a></li>
                     <li><a href="">Products</a></li>
-                    <li><a href="">News</a></li>
-                    <li><a href="">Contact-us</a></li>
+                    <li><a href="{{ path('app_actualites') }}">News</a></li>
+                    <li><a href="{{ path('app_contact') }}">Contact-us</a></li>
                     <li><a href="{{ render(controller('App\\Controller\\PageController::getLink',{ 'id': 4 })) }}">Copyright</a></li>
                 </ul>
             </div>
             <div class="footerCol col2">
                 <h3>social network</h3>
                 <ul>
-                    <li><a href=""><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
-                    <li><a href=""><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
-                    <li><a href=""><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                    {% if entreprise.youtube is not null %}
+                        <li><a href="{{ entreprise.youtube }}" target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+                    {% endif %}
+                    {% if entreprise.facebook is not null %}
+                        <li><a href="{{ entreprise.facebook }}" target="_blank"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                    {% endif %}
+                    {% if entreprise.instagram is not null %}
+                        <li><a href="{{ entreprise.instagram }}" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                    {% endif %}
                 </ul>
             </div>
         </div>

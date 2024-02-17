@@ -59,27 +59,6 @@ a{
     font-size: 17px;
 }
 
-.titre{
-    margin-bottom: 30px;
-}
-
-.titre h2{
-    margin-bottom: 0px;
-}
-
-.titre.left{
-    text-align: left;
-}
-
-.titre.centre{
-    text-align: center;
-}
-
-.titre p{
-    font-size: 25px;
-    margin-bottom: 0px;
-}
-
 .clear{
     clear: both;
 }
@@ -90,18 +69,28 @@ a{
 }
 
 input, textarea{
-    background: none;
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid #019CDA;
-    margin-bottom: 30px;
+    border-radius: 5px;
+    border: 1px solid #3C5760;
+    opacity: 0.5;
+    padding: 10px 20px;
+    width: calc(100% - 42px);
+    margin-bottom: 15px;
     font-size: 16px;
-    padding: 0px 0px 12px 10px;
-    color: #fff;
+}
+
+input:focus, textarea:focus{
+    opacity: 1;
+}
+
+label{
+    font-size: 14px;
+    font-weight: 400;
+    padding-bottom: 6px;
+    display: block;
 }
 
 textarea{
-    height: 140px;
+    height: 180px;
 }
 
 .btn{
@@ -151,13 +140,8 @@ textarea{
     padding-left: 15px;
 }
 
-.btnform{
-    border: solid 1px #019CDA;
-    background: none;
-    font-weight: 600;
-    color: #019CDA;
+.btnSubmit{
     cursor: pointer;
-    font-size: 17px;
 }
 
 .formsend{
@@ -187,7 +171,7 @@ textarea{
 }
 
 .flag{
-    background-color: #019CDA;
+    background-color: #0D1315;
     color: #fff;
     position: absolute;
     top: 10px;

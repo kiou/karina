@@ -8,6 +8,7 @@ use App\Entity\Block;
 use App\Entity\Header;
 use App\Entity\Galeries;
 use App\Entity\Actualite;
+use App\Entity\Entreprise;
 use App\Entity\Statistique;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -41,6 +42,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::section('Gestion');
         yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-dot-circle', User::class)->setDefaultSort(['id' => 'DESC']);
         yield MenuItem::linkToCrud('Blocks', 'fas fa-dot-circle', Block::class)->setDefaultSort(['id' => 'DESC']);
+        yield MenuItem::linkToCrud('Entreprise', 'fas fa-dot-circle', Entreprise::class)->setDefaultSort(['id' => 'DESC']);
         yield MenuItem::linkToCrud('Pages', 'fas fa-dot-circle', Page::class)->setDefaultSort(['id' => 'DESC']);
 
         yield MenuItem::section('Contenu');

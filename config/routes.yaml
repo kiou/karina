@@ -7,7 +7,7 @@ app_index_nolocale:
     controller: App\Controller\GlobalController::indexnolocale
 
 app_actualites:
-    path: /actualites
+    path: /{_locale}/actualites
     controller: App\Controller\ActualiteController::index
 
 app_actualites_view:
@@ -18,7 +18,7 @@ app_actualites_view:
         id: \d+
 
 app_pages_view:
-    path:     /page/{slug}/{id}
+    path:     /{_locale}/page/{slug}/{id}
     defaults: { _controller: App\Controller\PageController::view }
     requirements:
         slug: ([a-z-0-9]*)
@@ -26,3 +26,11 @@ app_pages_view:
 
 app_logout:
     path: /logout
+
+app_contact:
+    path: /{_locale}/contact-us
+    controller: App\Controller\ContactController::index
+
+sendcontact:
+    path: /contact-validation
+    controller: App\Controller\ContactController::send

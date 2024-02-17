@@ -1,0 +1,102 @@
+{% extends 'app/layout.html.twig' %}
+
+{% block title %} <title>Contact-us</title>{% endblock %}
+
+{% block content %}
+
+    {# En tête Page #}
+    <section class="headerPage">
+        <div class="inner">
+            <div class="headerPageContent"  style="background-image:url({{ asset('img/headerbase.png') }})">
+                <div class="headerPageTitle">
+                    <div>
+                        <h1>Contact-us</h1>
+                        <div class="headerPageP">
+                            <p>Lorem ipsum dolor sit amet consectetur. Libero viverra lorem posuere facilisis venenatis. Ut bibendum vulputate tortor magna est faucibus non. Mus faucibus dignissim sagittis non.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="patern1">
+        <div class="inner">
+        </div>
+    </section>
+
+    <section class="information">
+        <div class="inner">
+            <div class="informationLeft">
+                <h2>Hey, let's talk</h2>
+                <div class="informationLeftContent">   
+                    <p>Lorem ipsum dolor sit amet consectetur. Libero viverra lorem posuere facilisis venenatis. Ut bibendum vulputate tortor magna est faucibus non. Mus faucibus dignissim sagittis non. Et vestibulum volutpat odio mauris porta. Sit ornare quis id volutpat hac phasellus lacinia volutpat. Dictum risus tellus imperdiet id posuere. </p>
+                </div>
+            </div>
+
+            <div class="informationRight">
+                <img src="{{ asset('img/philosophy1.png') }}" class="philosophyRightImg1">
+                <div class="patern9"></div>
+
+                <div class="clear"></div>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+    </section>
+
+    <section class="entreprise">
+        <div class="inner">
+
+            <div class="entreprisesListe">
+                <div class="entrepriseCol col1">
+                    <i class="fas fa-phone"></i>
+                    <p>{{ entreprise.telephone }}</p>
+                </div>
+                <div class="entrepriseCol col2">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>{{ entreprise.adresse }}</p>
+                </div>
+                <div class="entrepriseCol col3">
+                    <i class="fas fa-paper-plane"></i>
+                    <p>{{ entreprise.email }}</p>
+                </div>
+
+                <div class="patern10"></div>
+
+                <div class="clear"></div>
+            </div>
+
+        </div>
+    </section>
+    
+    <section class="formulaire">
+        <div class="inner">
+
+            <div class="formulaireTop">
+                <h2>hello !</h2>
+                <p>Lorem ipsum dolor sit amet consectetur. Libero viverra lorem posuere facilisis venenatis. Ut bibendum vulputate tortor magna est faucibus non. Mus faucibus dignissim sagittis non.</p>
+            </div>
+
+            <div class="formulaireContent">
+
+                {{ form_start(form) }}
+
+                    {{ form_errors(form) }}
+
+                    {{ form_rest(form) }}
+
+                {{ form_end(form) }}
+                
+            </div>
+
+        </div>
+    </section>
+
+    <section class="map">
+        <div class="inner">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d81403.1760952001!2d-80.34715898033552!3d25.619994436858914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9c69575167249%3A0xc045deb83130132f!2s9154%20SW%20132nd%20Ln%2C%20Miami%2C%20FL%2033176%2C%20%C3%89tats-Unis!5e0!3m2!1sfr!2sfr!4v1708196299231!5m2!1sfr!2sfr" width="100%" height="700px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+{% endblock %}

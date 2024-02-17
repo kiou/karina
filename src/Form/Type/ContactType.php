@@ -4,50 +4,49 @@ namespace App\Form\Type;
 
 use App\Entity\Contact;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Gregwar\CaptchaBundle\Type\CaptchaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class ContactType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('nom', TextType::class,[
-                'attr' => [ 'placeholder' => 'Nom complet'],
+                'label' => 'Nom *',
+                'attr' => [ 'placeholder' => 'E.G. John'],
             ])
-            ->add('tel', TextType::class,[
-                'attr' => [ 'placeholder' => 'Téléphone'],
+            ->add('prenom', TextType::class,[
+                'label' => 'Prénom *',
+                'attr' => [ 'placeholder' => 'Smith'],
             ])
             ->add('email', EmailType::class,[
-                'attr' => [ 'placeholder' => 'Email'],
+                'label' => 'Email *',
+                'attr' => [ 'placeholder' => 'johnsmith@bubbagump.org'],
+            ])
+            ->add('telephone', TextType::class,[
+                'label' => 'Téléphone *',
+                'attr' => [ 'placeholder' => '(000) 000-000'],
             ])
             ->add('message', TextareaType::class,[
-                'attr' => [ 'placeholder' => 'Votre message'],
-            ])
-            ->add('captcha', CaptchaType::class,[
-                'attr' => [ 'placeholder' => 'Recopier le code'],
-                'width' => 200,
-                'height' => 60,
-                'length' => 6,
+                'label' => 'Message *',
+                'attr' => [ 'placeholder' => 'Tapez votre message'],
             ])
             ->add('Envoyer', SubmitType::class,[
-                'label' => 'envoyer votre message',
-                'attr' => ['class' => 'btn btnform']
+                'label' => 'Envoyer',
+                'attr' => ['class' => 'btn btnSubmit']
             ])
         ;
     }
-    
-    public function configureOptions(OptionsResolver $resolver)
+
+    public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
             'data_class' => Contact::class
         ]);
     }
 }
-
-?>

@@ -2,12 +2,12 @@
 
 {% block content %}
 
-    <div class="section page liste">
+    <div class="sectionliste">
         <div class="inner">
 
-            <div class="titre centre">
-                <h2><span>Mes</span> actualités</h2>
-                <p>Découvrez l'informatique avec vous en image</p>
+            <div class="listeTitre">
+                <h1>Nos actualités</h1>
+                <p>Lorem ipsum dolor sit amet consectetur. Libero viverra lorem posuere facilisis venenatis. Ut bibendum vulputate tortor magna est faucibus non. Mus faucibus</p>
             </div>
 
             <div class="actualites">
@@ -26,7 +26,7 @@
                             <p>{{ actualite.resume}}</p>
                         </div>
 
-                        <a href="{{ path('app_actualites_view',{'slug': actualite.slug, 'id': actualite.id})}}" class="btn link">lire la suite</a>
+                        <a href="{{ path('app_actualites_view',{'slug': actualite.slug, 'id': actualite.id})}}" class="link">lire la suite</a>
                     </div>
                 {% endfor %}
                 
