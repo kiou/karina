@@ -16,7 +16,22 @@
             <a href="{{ path('app_actualites') }}">News</a>
             <a href="{{ path('app_contact') }}">Contact-us</a>
         </div>
+
+        <div class="navigationRightMobileMenu">
+            <button class="menu-btn" id="menu-btn">
+                <span class="menu-btn__line"></span>
+                <span class="menu-btn__line"></span>
+                <span class="menu-btn__line"></span>
+            </button>
+        </div>
   
         <div class="clear"></div>
+    </div>
+    
+    <div class="mobilemenucontent">
+        <a href="{{ render(controller('App\\Controller\\PageController::getLink',{ 'id': 5 })) }}">About-us</a>
+        <a href="#">Products</a>
+        <a href="{{ path('app_actualites') }}">News</a>
+        <a href="{{ path('app_contact') }}">Contact-us</a>
     </div>
 </nav>

@@ -1,56 +1,41 @@
 {% extends 'app/layout.html.twig' %}
 
-{% block title %} <title> L'informatique avec vous - {{ actualite.titre }}</title>{% endblock %}
+{% block title %} <title>{{ actualite.titre }}</title>{% endblock %}
 
 {% block opengraph %}
-    <meta property="og:title" content="L'informatique avec vous - {{ actualite.titre }}">
+    <meta property="og:title" content="{{ actualite.titre }}">
     <meta property="og:description" content="{{ actualite.resume }}">
-    <meta property="og:url" content="https://lucpinelli.fr{{app.request.getBaseURL() ~ path('app_actualites_view',{'slug': actualite.slug, 'id': actualite.id})}}">
-    <meta property="og:image" content="https://lucpinelli.fr{{ asset('img/upload/' ~ actualite.image) }}">
+    {#
+        <meta property="og:url" content="https://lucpinelli.fr{{app.request.getBaseURL() ~ path('app_actualites_view',{'slug': actualite.slug, 'id': actualite.id})}}">
+        <meta property="og:image" content="https://lucpinelli.fr{{ asset('img/upload/' ~ actualite.image) }}">
+    #}
 {% endblock %}
 
 {% block content %}
 
-    <div class="section page">
+    {# En tête Page #}
+    <section class="headerPage headerActualite">
         <div class="inner">
-            <div class="actualitePageHeader" style="background-image: url({{ asset('img/upload/' ~ actualite.image) }});">
-                <div class="actualitePageHeaderFiltre"></div>
-
-                <div class="actualitePageHeaderContent">
-                    <h1>{{ actualite.titre }}</h1>
-                </div>
-                <div class="actualitePageHeaderDate">
-                    <p class="flag">{{actualite.created|localizeddate('none', 'none', null, null, 'MMMM Y')}}</p>
+            <div class="headerPageContent"  style="background-image:url({{ asset('img/upload/' ~ actualite.image) }})">
+                <div class="headerPageTitle">
+                    <div>
+                        <h1>{{ actualite.titre }}</h1>
+                    </div>
                 </div>
             </div>
-
-            <div class="pageContent {% if actualite.fullsize != false %}fullsize{% endif %}">
-                {{ actualite.contenu|raw }}
-            </div>
         </div>
-    </div>
+    </section>
 
-    <div class="section section8 page">
+    <section class="patern1">
         <div class="inner">
-        
-            <div class="titreCommunaute">
-                <img src="{{ asset('img/rejoignez-la-communaute.svg') }}">
-            </div>
-
-            <div class="acrocheFacebook">
-                <h2><span>Suivez-moi</span></h2>
-                <h2>sur Facebook</h2>
-                <h3><span>Pour être au courant des dernières actualités</span></h3>
-
-                <a href="https://www.facebook.com/informatiqueavecvous/" target="_blank" class="btn">suivre la page Facebook <i class="fas fa-arrow-right"></i></a>
-            </div>
-
-            <img src="{{ asset('img/back-facebook.png') }}" class="backFacebook">
-
         </div>
+    </section>
 
-        <img src="{{ asset('img/illustration-portable-facebook.png') }}" class="illustration3">
-        
-    </div>
+    {# Contenu d'une page #}
+    <section class="pageContent">
+        <div class="inner">
+            {{ actualite.contenu|raw }}
+        </div>
+    </section>
 
 {% endblock %}

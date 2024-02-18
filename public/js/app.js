@@ -21,8 +21,31 @@ $( document ).ready(function() {
         loop:false,
         items:5,
         nav:false,
-        margin:0
+        margin:0,
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:2,
+            },
+            850:{
+                items:3,
+            },
+            1200:{
+                items:4,
+            },
+            1400:{
+                items:5,
+            }
+        }
       });
+
+      $('#menu-btn').on('click', function(e){
+        e.preventDefault();
+
+        $('#menu-btn').toggleClass('active');
+        $('.mobilemenucontent').toggleClass('active');
+      });
+
 
 });
 

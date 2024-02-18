@@ -56,6 +56,61 @@
     padding-left: 50px;
 }
 
+.navigationRightMobileMenu{
+    float: right;
+    padding: 27px 0px;
+    display: none;
+}
+
+.menu-btn {
+    display: inline-block;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.menu-btn__line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #C9AB81;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.menu-btn.active .menu-btn__line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-btn.active .menu-btn__line:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.active .menu-btn__line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.mobilemenucontent{
+    padding: 20px;
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    top: -500%;
+    transition: 0.25s all ease-in-out;
+    background-color: #fff;
+    opacity: 0;
+}
+
+.mobilemenucontent a{
+    display: block;
+    padding: 10px 0px;
+}
+
+.mobilemenucontent.active{
+    top: 100%;
+    opacity: 1;
+}
+
 /* NAVIGATION FIXED */
 .navigation.fixed{
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));   
@@ -181,7 +236,6 @@
     padding: 50px 0px 80px 0px;
     max-width: 1210px;
     display: flex;
-    flex-wrap: wrap;
     justify-content:space-between;
 
 }
@@ -191,6 +245,12 @@
     transition: 0.3s all ease-in-out;
     opacity: 1;
     z-index: 5;
+    width: calc((100% / 4) - 16px);
+    margin: 0px 8px;
+}
+
+.menuHome img{
+    width: 100%;
 }
 
 .menuHome a{
@@ -537,6 +597,11 @@
     font-weight: 700;
 }
 
+.headerActualite h1{
+    font-size: 60px;
+    margin-bottom: 0px;
+}
+
 /* FOOTER */
 .footer{
     background-color: #0D1315;
@@ -630,3 +695,292 @@
 }
 
 
+@media (max-width: 1685px) {
+
+    .headerPageP {
+        padding-right: 150px;
+    }
+
+}
+
+@media (max-width: 1400px) {
+    .headerPageP {
+        padding-right: 0px;
+    }
+
+    .headerPageTitle {
+        padding: 0px 100px 0px 100px;
+        width: calc(75% - 200px);
+    }
+
+    .patern3 {
+        right: -37px;
+    }
+
+    .philosophyRightImg2 {
+        right: 0px;
+    }
+    
+    .patern9 {
+        right: -13px;
+    }
+    
+    .headerActualite h1{
+        font-size: 50px;
+    }
+
+}
+
+@media (max-width: 1210px) {
+    .quality .inner {
+        padding: 80px 15px 120px 15px;
+    }
+
+    .patern9 {
+        right: 0px;
+    }
+
+    .patern2 {
+        left: 0px;
+    }
+
+    .menusHome .inner {
+        padding: 50px 7px 80px 7px;
+    }
+
+    .patern3 {
+        right: 0px;
+    }
+
+    .philosophy .inner {
+        padding: 80px 15px 290px 15px;
+    }
+
+    .statistiques .inner {
+        padding: 0px 15px 100px 15px;
+    }
+
+    .homeVideo .inner {
+        padding: 100px 15px 140px 15px;
+    }
+
+    .homeVideoIframe iframe{
+        width: 100% !important;
+    }
+
+    .pageContent {
+        padding: 50px 15px 220px 15px;
+    }
+
+    .footer .inner {
+        padding: 0px 15px 90px 15px;
+    }
+
+    .information .inner {
+        padding: 80px 15px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .qualityLeft {
+        width: calc(50% - 30px);
+        margin-right: 30px;
+    }
+
+    .patern3 {
+        display: none;
+    }
+
+    .philosophyRight{
+        width: calc(50% - 30px);
+        margin-left: 30px;
+    }
+
+    .patern6 {
+        opacity: 0.4;
+    }
+
+    .entreprise .inner {
+        padding: 80px 15px 100px 15px;
+    }
+
+    .actualite {
+        width: calc((100% / 2) - 30px);
+    }
+
+    h1 {
+        font-size: 65px;
+    }
+
+    .informationRight {
+        width: calc(50% - 30px);
+        margin-left: 30px;
+    }
+
+    .navigation {
+        padding: 10px 15px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));   
+        background-color: #fff;
+    }
+
+    .navigation .logo img{
+        width: 140px;
+    }
+    
+    .navLeft{
+        display: none;
+    }
+    
+    .navRight{
+        display: none;
+    }
+    
+    .navigation .navCentre{
+        width: 40%;
+        text-align: left;
+    }
+
+    .headerAccueil .headerPageContent{
+        height: 750px;
+    }
+
+    .navigationRightMobileMenu{
+        display: block;
+    }
+
+    .headerPageTitle {
+        padding: 0px 50px;
+        width: calc(80% - 100px);
+    }
+    
+
+}
+
+@media (max-width: 950px) {
+    .patern4 {
+        display: none;
+    }
+
+    .statistique h2 {
+        font-size: 120px;
+    }
+
+    .philosophy .inner {
+        padding: 80px 15px 150px 15px;
+    }
+
+    .patern8 {
+        opacity: 0.1;
+    }
+    
+    .footerCols{
+        text-align: center;
+        justify-content:center;
+    }
+
+    .footerCol {
+        padding: 0px 30px;
+    }
+
+    .social .inner {
+        padding: 120px 15px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 780px) {
+
+    .headerPageTitle {
+        padding: 70px 20px 0px 20px;
+        width: calc(100% - 40px);
+    }
+
+    .qualityLeft {
+        width: 100%;
+        margin-right: 0px;
+    }
+
+    .patern2 {
+        left: 330px;
+        bottom: -48px;
+    }
+
+    .qualityRight {
+        width: 100%;
+    }
+
+    .menuHome {
+        width: calc((100% / 2) - 16px);
+        margin-bottom: 8px;
+    }
+
+    .menusHome .inner{
+        justify-content:center;
+        flex-wrap: wrap;
+        padding: 20px 7px 40px 7px;
+    }
+
+    .philosophyLeft {
+        width: 100%;
+        padding-top: 0px;
+    }
+
+    .philosophyRight {
+        display: none;
+    }
+
+    .philosophy .inner {
+        padding: 80px 15px;
+    }
+
+    .informationLeft {
+        width: 100%;
+        padding-top: 0px;
+    }
+
+    .informationRight {
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    .philosophyRightImg1 {
+        float: left;
+    }
+
+    .patern9 {
+        right: 109px;
+    }
+
+    .entrepriseCol.col1, .entrepriseCol.col3 {
+        margin: 0px 0px 15px 0px;
+    }
+
+    .entrepriseCol {
+        width: 100%;
+        margin: 0px 0px 15px 0px;
+        float: none;
+    }
+
+    .formulaire .inner {
+        padding: 60px 15px 80px 15px;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .statistiques .inner {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .statistique {
+        width: 100%;
+        text-align: center;
+    }
+
+    .actualite {
+        width: calc((100%) - 30px);
+    }
+
+}

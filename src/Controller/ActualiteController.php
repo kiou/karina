@@ -8,20 +8,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ActualiteController extends AbstractController
 {
-    private $ActualiteRepository;
     private $EntrepriseRepository;
 
     public function __construct(
-        ActualiteRepository $ActualiteRepository,
         EntrepriseRepository $EntrepriseRepository
     ){
-        $this->ActualiteRepository = $ActualiteRepository;
         $this->EntrepriseRepository = $EntrepriseRepository;
     }
 
-    public function index()
+    public function index(ActualiteRepository $ActualiteRepository)
     {
-        $actualites = $this->ActualiteRepository->getAllActualites();
+        $actualites = $ActualiteRepository->getAllActualites();
         $entreprise = $this->EntrepriseRepository->getEntreprise();
 
         return $this->render('actualites.html.twig',[
@@ -30,12 +27,14 @@ class ActualiteController extends AbstractController
         ]);
     }
 
-    public function view(Actualite $id)
+    public function view(Actualite $id, ActualiteRepository $ActualiteRepository)
     {
-        $actualite = $this->$ActualiteRepository->find($id);
+        $actualite = $ActualiteRepository->find($id);
+        $entreprise = $this->EntrepriseRepository->getEntreprise();
 
         return $this->render('actualite.html.twig',[
-            'actualite' => $actualite
+            'actualite' => $actualite,
+            'entreprise' => $entreprise
         ]);
 
     }

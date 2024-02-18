@@ -11,7 +11,7 @@ app_actualites:
     controller: App\Controller\ActualiteController::index
 
 app_actualites_view:
-    path:     /actualite/{slug}/{id}
+    path:     /{_locale}/actualite/{slug}/{id}
     defaults: { _controller: App\Controller\ActualiteController::view }
     requirements:
         slug: ([a-z-0-9]*)
