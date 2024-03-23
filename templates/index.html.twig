@@ -13,7 +13,7 @@
                         </div>
                         {% if header.lien is not null %}
                             <div class="headerPageLien">
-                                <a href="" class="btn">En savoir +</a>
+                                <a href="{{ header.lien }}" class="btn">{{ 'btn.showmore'|trans }}</a>
                             </div>
                         {% endif %}
                     </div>
@@ -37,9 +37,9 @@
             <div class="qualityRight">
                 <h2>quality</h2>
                 <div class="qualityRightContent">    
-                    <p>Lorem ipsum dolor sit amet consectetur. Libero viverra lorem posuere facilisis venenatis. Ut bibendum vulputate tortor magna est faucibus non. Mus faucibus dignissim sagittis non. Et vestibulum volutpat odio mauris porta. Sit ornare quis id volutpat hac phasellus lacinia volutpat. Dictum risus tellus imperdiet id posuere. </p>        
+                    {{ render(controller('App\\Controller\\BlockController::view', {id: 2} )) }}
                 </div>
-                <a href="{{ render(controller('App\\Controller\\PageController::getLink',{ 'id': 1 })) }}" class="btn">En savoir +</a>
+                <a href="{{ render(controller('App\\Controller\\PageController::getLink',{ 'id': 1 })) }}" class="btn">{{ 'btn.showmore'|trans }}</a>
             </div>
 
             <div class="clear"></div>
@@ -50,22 +50,22 @@
         <div class="inner">
             <div class="menuHome">            
                 <img src="{{ asset('img/menuhome1.png') }}">
-                <a href="{{ render(controller('App\\Controller\\PageController::getLink',{ 'id': 5 })) }}">about us</a>
+                <a href="{{ render(controller('App\\Controller\\PageController::getLink',{ 'id': 5 })) }}">{{ 'menu.link1'|trans }}</a>
             </div>
 
             <div class="menuHome">            
                 <img src="{{ asset('img/menuhome2.png') }}">
-                <a href="">products</a>
+                <a href="{{ render(controller('App\\Controller\\PageController::getLink',{ 'id': 8 })) }}">{{ 'menu.link2'|trans }}</a>
             </div>
 
             <div class="menuHome">            
                 <img src="{{ asset('img/menuhome3.png') }}">
-                <a href="{{ path('app_actualites') }}">news</a>
+                <a href="{{ path('app_actualites') }}">{{ 'menu.link3'|trans }}</a>
             </div>
 
             <div class="menuHome">            
                 <img src="{{ asset('img/menuhome4.png') }}">
-                <a href="{{ path('app_contact') }}">contact us</a>
+                <a href="{{ path('app_contact') }}">{{ 'menu.link4'|trans }}</a>
             </div>
 
             <div class="patern3"></div>
@@ -77,10 +77,9 @@
             <div class="philosophyLeft">
                 <h2>philosophy</h2>
                 <div class="philosophyLeftContent">   
-                    <p>Lorem ipsum dolor sit amet consectetur. Libero viverra lorem posuere facilisis venenatis. Ut bibendum vulputate tortor magna est faucibus non. Mus faucibus dignissim sagittis non. Et vestibulum volutpat odio mauris porta. Sit ornare quis id volutpat hac phasellus lacinia volutpat. Dictum risus tellus imperdiet id posuere. </p>
-                    <p>Lorem ipsum dolor sit amet consectetur. Libero viverra lorem posuere facilisis venenatis. Ut bibendum vulputate tortor magna est faucibus non. Mus faucibus dignissim sagittis non.</p>
+                    {{ render(controller('App\\Controller\\BlockController::view', {id: 3} )) }}
                 </div>
-                <a href="{{ render(controller('App\\Controller\\PageController::getLink',{ 'id': 2 })) }}" class="btn">En savoir +</a>
+                <a href="{{ render(controller('App\\Controller\\PageController::getLink',{ 'id': 2 })) }}" class="btn">{{ 'btn.showmore'|trans }}</a>
             </div>
 
             <div class="philosophyRight">
@@ -109,7 +108,7 @@
     <section class="social">
         <div class="inner">
             <h2>social responsability</h2>
-            <a href="{{ render(controller('App\\Controller\\PageController::getLink',{ 'id': 3 })) }}" class="btn blanc">En savoir +</a>
+            <a href="{{ render(controller('App\\Controller\\PageController::getLink',{ 'id': 3 })) }}" class="btn blanc">{{ 'btn.showmore'|trans }}</a>
             
             <div class="patern5"></div>
         </div>
@@ -123,11 +122,11 @@
     <section class="homeVideo">
         <div class="inner">
             <div class="homeVideoIframe">
-                <iframe width="1210" height="550" src="https://www.youtube.com/embed/KLuTLF3x9sA?si=SWISDEIdCLNTR_E8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="1210" height="550" src="https://www.youtube.com/embed/XWprSPXQJP0?si=e4DI0ugvcI9lJeMj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
 
             <div class="homeVideoConntent">
-                <p>Lorem ipsum dolor sit amet consectetur. Libero viverra lorem posuere facilisis venenatis. Ut bibendum vulputate tortor magna est faucibus non. Mus faucibus dignissim sagittis non. Et vestibulum volutpat odio mauris porta. Sit ornare quis id volutpat hac phasellus lacinia volutpat.</p>
+                {{ render(controller('App\\Controller\\BlockController::view', {id: 4} )) }}
             </div>
         </div>
 

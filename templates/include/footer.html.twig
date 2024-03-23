@@ -2,16 +2,15 @@
     <div class="inner">
         <div class="footerHeader">
             <img src="{{ asset('img/logofooter.png') }}">
-            <p>Lorem ipsum dolor sit amet consectetur. Libero viverra lorem posuere facilisis venenatis. Ut bibendum vulputate tortor magna est faucibus non. Mus faucibus dignissim sagittis non.</p>
+            {{ render(controller('App\\Controller\\BlockController::view', {id: 5} )) }}
         </div>
-
         <div class="footerCols">
             <div class="footerCol">
                 <ul>
-                    <li><a href="{{ render(controller('App\\Controller\\PageController::getLink',{ 'id': 5 })) }}">About-us</a></li>
-                    <li><a href="">Products</a></li>
-                    <li><a href="{{ path('app_actualites') }}">News</a></li>
-                    <li><a href="{{ path('app_contact') }}">Contact-us</a></li>
+                    <li><a href="{{ render(controller('App\\Controller\\PageController::getLink',{ 'id': 5 })) }}">{{ 'menu.link1'|trans }}</a></li>
+                    <li><a href="{{ render(controller('App\\Controller\\PageController::getLink',{ 'id': 8 })) }}">{{ 'menu.link2'|trans }}</a></li>
+                    <li><a href="{{ path('app_actualites') }}">{{ 'menu.link3'|trans }}</a></li>
+                    <li><a href="{{ path('app_contact') }}">{{ 'menu.link4'|trans }}</a></li>
                     <li><a href="{{ render(controller('App\\Controller\\PageController::getLink',{ 'id': 4 })) }}">Copyright</a></li>
                 </ul>
             </div>

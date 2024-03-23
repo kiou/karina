@@ -186,6 +186,26 @@
     padding: 50px 0px 220px 0px;
 }
 
+.pageContent img{
+    max-width: 100%;
+    height: auto !important;
+}
+
+.pageContent ul, .pageContent ol{
+    margin-left: 20px;
+    color: #3C5760;
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 15px;
+    line-height: 28px;
+}
+
+.pageContent a{
+    opacity: 1;
+    text-decoration: underline;
+    font-weight: bold; 
+}
+
 /* PATERN 1 */
 .patern1 .inner{
     height: 49px;
@@ -266,6 +286,7 @@
     z-index: 5;
     font-weight: 700;
     font-size: 23px;
+    text-shadow: #000 1px 0 5px;
 }
 
 .menuHome:hover{
@@ -344,10 +365,12 @@
 
 .statistique{
     position: relative;
+    padding-bottom: 45px;
+    text-align: center;
 }
 
 .statistique h2{
-    font-size: 150px;
+    font-size: 75px;
     opacity: 0.7;
     font-weight: 900;
     position: relative;
@@ -357,16 +380,6 @@
 .statistique p{
     font-size: 28px;
     font-weight: 400;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    z-index: 5;
-    display: flex;
-    align-items:center;
-    text-align: center;
-    justify-content: center;
 }
 
 /* SOCIAL */
@@ -506,6 +519,7 @@
 
 .entrepriseCol p{
     font-weight: 700;
+    padding: 0px 15px;
 }
 
 .entrepriseCol i{
@@ -861,8 +875,15 @@
         display: none;
     }
 
-    .statistique h2 {
-        font-size: 120px;
+    .statistiques .inner {
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 90px 15px 50px 15px;
+    }
+
+    .statistique {
+        width: 100%;
+        text-align: center;
     }
 
     .philosophy .inner {
@@ -965,22 +986,19 @@
         padding: 60px 15px 80px 15px;
     }
 
+    .statistiques .inner {
+        padding: 40px 15px 50px 15px;
+    }
+
 }
 
 @media (max-width: 650px) {
-
-    .statistiques .inner {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .statistique {
-        width: 100%;
-        text-align: center;
-    }
 
     .actualite {
         width: calc((100%) - 30px);
     }
 
+    h2 {
+        font-size: 48px;
+    }
 }

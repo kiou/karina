@@ -44,10 +44,6 @@ class BlockCrudController extends AbstractCrudController
         yield TextEditorField::new('content')
             ->hideOnIndex()
             ->setFormType(CKEditorType::class);       
-         yield ChoiceField::new('categorie')
-            ->autocomplete()->setChoices([
-                'Accueil' => 'Accueil'
-        ]);
     }
 
 }

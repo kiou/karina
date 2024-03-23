@@ -31,10 +31,6 @@ class Block
     #[Assert\NotBlank(message : "Compléter le champ contenu")]
     private ?string $content = null;
 
-    #[ORM\Column(type : "string", length : 255)]
-    #[Assert\NotBlank(message : "Compléter la catégorie")]
-    private ?string $categorie = null;
-
     #[ORM\Column(type : "string", length : 5)]
     private $language;
 
@@ -98,18 +94,6 @@ class Block
     public function setContent(string $content): self
     {
         $this->content = $content;
-
-        return $this;
-    }
-
-    public function getCategorie(): ?string
-    {
-        return $this->categorie;
-    }
-
-    public function setCategorie(string $categorie): self
-    {
-        $this->categorie = $categorie;
 
         return $this;
     }

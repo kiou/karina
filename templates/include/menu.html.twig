@@ -2,8 +2,8 @@
     <div class="inner">
         
         <div class="navLeft">
-            <a href="{{ render(controller('App\\Controller\\PageController::getLink',{ 'id': 5 })) }}">About-us</a>
-            <a href="#">Products</a>
+            <a href="{{ render(controller('App\\Controller\\PageController::getLink',{ 'id': 5 })) }}">{{ 'menu.link1'|trans }}</a>
+            <a href="{{ render(controller('App\\Controller\\PageController::getLink',{ 'id': 8 })) }}">{{ 'menu.link2'|trans }}</a>
         </div>
 
         <div class="navCentre">
@@ -13,8 +13,8 @@
         </div> 
       
         <div class="navRight">
-            <a href="{{ path('app_actualites') }}">News</a>
-            <a href="{{ path('app_contact') }}">Contact-us</a>
+            <a href="{{ path('app_actualites') }}">{{ 'menu.link3'|trans }}</a>
+            <a href="{{ path('app_contact') }}">{{ 'menu.link4'|trans }}</a>
         </div>
 
         <div class="navigationRightMobileMenu">
