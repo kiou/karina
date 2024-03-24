@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Entity\Page;
 use App\Repository\PageRepository;
+use App\Repository\ProductRepository;
 use App\Repository\EntrepriseRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,24 +14,29 @@ class PageController extends AbstractController
 
     private $PageRepository;
     private $EntrepriseRepository;
+    private $ProductRepository;
 
     public function __construct(
             PageRepository $PageRepository,
-            EntrepriseRepository $EntrepriseRepository
+            EntrepriseRepository $EntrepriseRepository,
+            ProductRepository $ProductRepository,
         )
     {
         $this->PageRepository = $PageRepository;
         $this->EntrepriseRepository = $EntrepriseRepository;
+        $this->ProductRepository = $ProductRepository;
     }
 
     public function view(Page $id, PageRepository $PageRepository)
     {
         $page = $PageRepository->find($id);
         $entreprise = $this->EntrepriseRepository->getEntreprise();
+        $products = $this->ProductRepository->getProducts();
 
         return $this->render('page.html.twig',[
             'page' => $page,
-            'entreprise' => $entreprise
+            'entreprise' => $entreprise,
+            'products' => $products
         ]);
 
     }

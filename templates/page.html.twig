@@ -30,6 +30,33 @@
         <div class="inner">
             {{ page.contenu|raw }}
         </div>
+
+        {% if page.id == 8 %}
+
+            <div class="produitsPage">
+
+                <div class="produitsTitre">
+                    <h2>Products</h2>
+                    <p>Here we market</p>
+                </div>
+
+                <div class="produits">
+                    {% for product in products %}
+                        <div class="product">
+                            <div class="productImage">
+                                <img src="{{ asset('img/miniature/' ~ product.image) }}">
+                            </div>
+                            <div class="productContenu">
+                                <h3>{{ product.title }}</h3>
+                                <p>{{ product.contenu|raw }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+
+        {% endif %}
     </section>
 
 {% endblock %}

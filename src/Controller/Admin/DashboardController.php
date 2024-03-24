@@ -6,6 +6,7 @@ use App\Entity\Page;
 use App\Entity\User;
 use App\Entity\Block;
 use App\Entity\Header;
+use App\Entity\Product;
 use App\Entity\Galeries;
 use App\Entity\Actualite;
 use App\Entity\Entreprise;
@@ -47,6 +48,7 @@ class DashboardController extends AbstractDashboardController
 
         yield MenuItem::section('Contenu');
         yield MenuItem::linkToCrud('Actualités', 'fas fa-dot-circle', Actualite::class)->setDefaultSort(['id' => 'DESC']);
+        yield MenuItem::linkToCrud('Produits', 'fas fa-dot-circle', Product::class)->setDefaultSort(['id' => 'DESC']);
         yield MenuItem::linkToCrud('En têtes', 'fas fa-dot-circle', Header::class)->setDefaultSort(['id' => 'DESC']);
         yield MenuItem::linkToCrud('Statistiques', 'fas fa-dot-circle', Statistique::class)->setDefaultSort(['id' => 'DESC']);
         yield MenuItem::linkToCrud('Galeries', 'fas fa-dot-circle', Galeries::class)->setDefaultSort(['id' => 'DESC']);
